@@ -7,8 +7,10 @@ import HomeComponent from './components/HomeComponent';
 import MainContentComponent from './components/MainContentComponent';
 
 // Auth
+import AuthComponent from './components/auth/AuthComponent';
 import ConnexionComponent from './components/auth/ConnexionComponent';
 import VerifyEmailComponent from './components/auth/VerifyEmailComponent';
+import ResetPasswordComponent from './components/auth/ResetPasswordComponent';
 
 // Account
 import AccountComponent from './components/account/AccountComponent';
@@ -22,10 +24,22 @@ const routes =  [
 				{ 
 					path : 'auth', 
 					name : 'auth',
-					component: ConnexionComponent,
+					component: AuthComponent,
 					meta: { 
 		                guest: true
-		            } 
+					},
+					children :[
+						{
+							path : '', 
+							name : 'connexion',
+							component: ConnexionComponent
+						},
+						{
+							path : 'reset/password', 
+							name : 'reset-password',
+							component: ResetPasswordComponent
+						}		
+					]
 		        },
 		     	{
 		       		path: 'account',
@@ -35,7 +49,8 @@ const routes =  [
 		                requiresAuth: true
 		            }
 		       	},
-				{ path : 'email/verify/:id', component: VerifyEmailComponent }
+				{ path : 'email/verify/:id', component: VerifyEmailComponent },
+				{ path : 'user/reset/password', component: ResetPasswordComponent }
 			]
 		},
 ];

@@ -16,7 +16,6 @@ Route::get('/{any}', function () {
 })->where('any', '^(?!nova).*');
 
 Route::get('email/verify/{id}', function () {
-	return view('app');
+    return view('app');
 })->name('verification.verify');
-Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 

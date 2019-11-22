@@ -2,10 +2,12 @@
 
 namespace App;
 
+use DateTime;
+use Debugbar;
+use Carbon\Carbon;
 use Laravel\Passport\HasApiTokens;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -17,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'password', 'gender', 'phone'
+        'firstname', 'lastname', 'email', 'password', 'gender', 'phone', 'birth_date', 'resend_token'
     ];
 
     public $timestamps = true;
@@ -26,13 +28,30 @@ class User extends Authenticatable
         'is_admin' => false,
     ];
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'birth_date',
+    ];
+
+    public function setBirthDateAttribute($value)
+    {
+        $date = DateTime::createFromFormat("d/m/Y", $value);
+        $this->attributes['birth_date'] = $date;
+    }
+
+    public function getBirthDateAttribute($value)
+    {
+        return (new Carbon($value))->format('d-m-Y');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'resend_token',
     ];
 
     /**

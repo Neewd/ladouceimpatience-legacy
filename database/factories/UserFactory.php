@@ -13,6 +13,6 @@ $factory->define(App\User::class, function (Faker $faker) {
         'email_verified_at' => now(),
         'phone' => $faker->phoneNumber,
         'password' => Hash::make('test'),
-        'remember_token' => Str::random(10),
+        'age' => $faker->age,
     ];
 });

@@ -27,6 +27,15 @@ const user = {
 			state.authenticated = false;
 			state.token = null;
 		},
+		REGISTER(state) {
+			state.loading = true;
+		},
+		REGISTER_SUCCESS(state) {
+			state.loading = false;
+		},
+		REGISTER_FAILURE(state) {
+			state.loading = false;
+		},
 		VERIFY_USER_MAIL(state) {
 			state.emailVerification.loading = true;
 		},
@@ -56,7 +65,7 @@ const user = {
 		async login({ commit }, data) {
 			return new Promise((resolve, reject) => {
 				commit("LOGIN", true);
-			axios.post('api/login', { email : data.email , password: data.password})
+			axios.post('/api/login', { email : data.email , password: data.password})
 				.then(({ data }) => {
 					commit("LOGIN_SUCCESS", data);
 					resolve(data);
@@ -77,11 +86,11 @@ const user = {
 	        })
    		},
 		async checkUserExistence({ commit }, email) {
-			return axios.get(`api/user/${email}`)
+			return axios.get(`/api/user/${email}`)
 		},
 		async register({ commit }, user) {
 			commit("REGISTER");
-			const response = axios.post(`api/register`, user)
+			const response = axios.post(`/api/register`, user)
 			if (response.status === 200) {
 				commit("REGISTER_SUCCESS", response.data);
 			}
@@ -108,6 +117,27 @@ const user = {
 					commit("FETCH_USER_FAILURE", error.response.data);
 				});
 		},
+		async sendResetPasswordLink({ commit }, { email }) {
+			axios.put(`/api/reset/password` , { email : email })
+			.then(response => {
+				console.log(response)
+			})
+			.catch(error => {
+				console.error(error)
+				// commit("FETCH_USER_FAILURE", error.response.data);
+			});
+		},
+		async modifyPassword({ commit }, data) {
+			return new Promise((resolve, reject ) => {
+				axios.put(`/api/modify/password`, { password: data.password, password_confirmation : data.password_confirmation, token : data.token})
+					.then(response => {
+						resolve(response)
+					})
+					.catch(error => {
+						reject(error)
+					});
+			});
+		}
 	}
 };
 
