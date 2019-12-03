@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Newsletter;
+use Laravel\Nova\Nova;
+use App\Observers\NewslettersObserver;
 
 class AppServiceProvider extends ServiceProvider
 {

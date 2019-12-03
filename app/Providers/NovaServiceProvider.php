@@ -3,9 +3,12 @@
 namespace App\Providers;
 
 use Laravel\Nova\Nova;
-use Laravel\Nova\Cards\Help;
+use Neewd\Newsletter\Newsletter;
+use App\Nova\Metrics\NewUsersValue;
 use Illuminate\Support\Facades\Gate;
+use App\Nova\Metrics\GenderUserPartition;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Neewd\Templates\Templates;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -56,7 +59,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
+            new NewUsersValue(),
+            new GenderUserPartition()
         ];
     }
 
@@ -77,7 +81,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            new Newsletter(),
+            new \Sbine\RouteViewer\RouteViewer
+        ];
     }
 
     /**

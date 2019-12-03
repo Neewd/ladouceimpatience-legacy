@@ -1,0 +1,16 @@
+// If you don't need the styles, do not connect
+@import '~sweetalert2/dist/sweetalert2.min.css';
+
+.layout-line {
+    &:hover {
+        cursor : pointer;
+    }
+}
+
+.quillWrapper {
+    width : 100%;
+}
+
+.buttons-list {
+    width : 100px;
+}

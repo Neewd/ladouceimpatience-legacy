@@ -11,7 +11,6 @@ class NewsletterController extends Controller
 
     public function subscribe(Request $request)
     {   
-        $email = new \SendGrid\Mail\Mail(); 
         /*if (!Newsletter::isSubscribed($request->email)) {
             // We are gonna look if the email is an already register user to see if we can retrieve some information
             $user = User::where('email', '=', $request->email)->first();

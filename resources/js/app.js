@@ -1,5 +1,8 @@
 import Vue from 'vue';
 import router from './routes';
+import VueTailwind from 'vue-tailwind'
+
+Vue.use(VueTailwind)
 
 router.beforeEach((to, from, next) => {
     if(to.matched.some(record => record.meta.requiresAuth)) {
