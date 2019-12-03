@@ -80,12 +80,9 @@ class NewsletterController extends Controller
         );
         $campaignId = $request->campaignId;
 
-        print_r($request->all());
-
         try {
             $result = $apiInstance->sendEmailCampaignNow($campaignId);
-            print_r($result);
-            return json_encode($result['contacts'], true);;
+            return response()->json(['success' => 'The campaign has been sent']);
         } catch (Exception $e) {
             Debugbar::error('Exception when calling EmailCampaignsApi->getEmailCampaigns: ', $e->getMessage(), PHP_EOL);
             return response()->json(['error' => true, 'message' => $e->getMessage()]);
