@@ -32,6 +32,9 @@
                         <th class="text-center">
                             <span>Sender</span>
                         </th>
+                        <th class="text-center">
+                            <span>Date d'envoi</span>
+                        </th>
                         <!-- Actions, View, Edit, Delete -->
                         <th>&nbsp;</th>
                     </tr>
@@ -45,11 +48,34 @@
                             class="text-center"
                             @click="searchInfo(campaign)"
                         >{{ campaign.sender.email }}</td>
-                        <td class="buttons-list">
+                        <td class="text-center">
+                            <span v-if="campaign.scheduledAt < Date.now()">
+                                <button
+                                    class="appearance-none cursor-pointer text-70"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        width="24"
+                                        height="24"
+                                        class="fill-current"
+                                    >
+                                        <path
+                                            class="heroicon-ui"
+                                            d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8.41l2.54 2.53a1 1 0 0 1-1.42 1.42L11.3 12.7A1 1 0 0 1 11 12V8a1 1 0 0 1 2 0v3.59z"
+                                        />
+                                    </svg>
+                                </button>
+                            </span>
+                            <span
+                                v-if="campaign.scheduledAt !== ''"
+                                :class="{'text-success' : campaignIsBeforeNow(campaign)}"
+                            >{{ campaign.scheduledAt | moment("D-M-YYYY") }}</span>
+                        </td>
+                        <td class="flex">
                             <button
-                                data-testid="users-items-0-delete-button"
-                                title="Delete"
-                                class="appearance-none cursor-pointer text-70 hover:text-primary mr-3"
+                                title="send"
+                                class="appearance-none cursor-pointer text-70 hover:text-primary mr-3 flex"
                                 @click.prevent="sendCampaign(campaign)"
                             >
                                 <svg
@@ -62,6 +88,25 @@
                                     <path
                                         class="heroicon-ui"
                                         d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2zm16 3.38V6H4v1.38l8 4 8-4zm0 2.24l-7.55 3.77a1 1 0 0 1-.9 0L4 9.62V18h16V9.62z"
+                                    />
+                                </svg>
+                            </button>
+                            <button
+                                title="delete"
+                                class="appearance-none cursor-pointer text-70 hover:text-primary flex"
+                                v-if="campaign.scheduledAt === ''"
+                                @click.prevent="deleteCampaign(campaign)"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                    height="24"
+                                    class="fill-current"
+                                >
+                                    <path
+                                        class="heroicon-ui"
+                                        d="M8 6V4c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2h5a1 1 0 0 1 0 2h-1v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8H3a1 1 0 1 1 0-2h5zM6 8v12h12V8H6zm8-2V4h-4v2h4zm-4 4a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1z"
                                     />
                                 </svg>
                             </button>
@@ -194,13 +239,36 @@ export default {
                     campaignId: campaign.id
                 })
                 .then(({ data }) => {
-                    console.log(data)
+                    console.log(data);
                 })
                 .catch(error => {
                     if (error.response.data) {
                         this.errors = error.response.data.errors;
                     }
                 });
+        },
+        deleteCampaign(campaignToDelete) {
+            Nova.request()
+                .delete(
+                    `/nova-vendor/newsletter/campaigns/${campaignToDelete.id}`
+                )
+                .then(({ data }) => {
+                    this.$toasted.show("La campagne à bien été supprimée.", {
+                        type: "success"
+                    });
+                    this.campaigns = this.campaigns.filter(
+                        campaign => campaign.id !== campaignToDelete.id
+                    );
+                })
+                .catch(error => {
+                    if (error.response.data) {
+                        this.errors = error.response.data.errors;
+                    }
+                });
+        },
+        campaignIsBeforeNow(campaign) {
+            const date = new Date(campaign.scheduledAt);
+            return moment(date).isBefore(moment());
         }
     }
 };

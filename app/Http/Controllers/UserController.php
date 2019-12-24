@@ -22,7 +22,6 @@ class UserController extends Controller
   public function exist($email)
   {
     $user = User::where('email', '=', $email)->first();
-    Debugbar::info($user);
     return response()->json($user);
   }
 

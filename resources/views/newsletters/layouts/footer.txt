@@ -1,0 +1,5 @@
+<p>Cliquez ici pour vous 
+    <a href="http://my_website:8080/api/{{ contact.UNSUBSCRIBE_TOKEN}}" target="_blank">
+        désinscrire
+    </a>
+ de la newsletter</p>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewsletterTable extends Migration
+class CreateBrandTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateNewsletterTable extends Migration
      */
     public function up()
     {
-        Schema::create('newsletter', function (Blueprint $table) {
+        Schema::create('brand', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('mailable_name');
-            $table->boolean('active');
+            $table->string('picture_url');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateNewsletterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('newsletter');
+        Schema::dropIfExists('brand');
     }
 }

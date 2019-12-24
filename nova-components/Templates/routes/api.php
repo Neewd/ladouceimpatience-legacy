@@ -28,6 +28,6 @@ Route::prefix('/layouts')->group(function () {
 });
 
 Route::post('/', TemplateController::class.'@save');
-Route::get('/', TemplateController::class.'@index');
+Route::post('/', TemplateController::class.'@index');
 Route::get('/{name}', TemplateController::class.'@get');
 Route::delete('/{name}', TemplateController::class.'@delete');

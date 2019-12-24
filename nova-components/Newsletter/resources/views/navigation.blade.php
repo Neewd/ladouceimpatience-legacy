@@ -15,4 +15,9 @@
             Templates
         </router-link>
     </li>
+    <li class="leading-wide mb-4 text-sm">
+        <router-link :to="{ name: 'recipient'}" class="text-white ml-8 no-underline dim">
+            Recipients
+        </router-link>
+    </li>
 </ul>

@@ -14,20 +14,19 @@ class LayoutController extends Controller
     public function index(Request $request)
     {   
         $layoutsFiles = Storage::disk('views')->allFiles("./newsletters/layouts");
+        Debugbar::info($layoutsFiles);
         $layouts = [];
 
         for ($i = 0; $i < sizeof($layoutsFiles); $i++) {
-            $viewName = str_replace('.blade.php', '', $layoutsFiles[$i]);
-
-            $viewFile = view($viewName);
-            $htmlView = $viewFile->render();
+            $viewName = str_replace('.txt', '', $layoutsFiles[$i]);
+            $file = file_get_contents(base_path() . '/resources/views/' . $layoutsFiles[$i], true);
             $view = new \stdClass();
             $view->path = $viewName;
             $view->name = str_replace('newsletters/layouts/', '', $viewName);
-            $view->html = $htmlView;
+            $view->html = $file;
             array_push($layouts, $view);
         }
-        return response()->json(['layouts' => $layouts], 200);
+        return response()->json(['layouts' => $layouts], $this->successStatus);
     }
 
     public function get(Request $request)
@@ -35,23 +34,22 @@ class LayoutController extends Controller
         $viewFile = view("newsletters/layouts/" . $request->name);
         $htmlView = $viewFile->render();
         $view = new \stdClass();
-        $view->path = "newsletters/layouts/" . $request->name . ".blade.php";
+        $view->path = "newsletters/layouts/" . $request->name . ".txt";
         $view->name = $request->name;
         $view->html = $htmlView;
 
-        return response()->json(['layout' => $view], 200);
+        return response()->json(['layout' => $view], $this->successStatus);
     }
 
     public function delete(Request $request)
     {
-        $deleteSuccess = Storage::disk('views')->delete("./newsletters/layouts/" . $request->name . ".blade.php");
+        $deleteSuccess = Storage::disk('views')->delete("./newsletters/layouts/" . $request->name . ".txt");
 
         return response()->json(['returnCode' => $deleteSuccess]);
     }
 
     public function save(Request $request)
     {
-
         $rules = array(
             'name' => 'required',
             'content'   => 'required'
@@ -64,12 +62,10 @@ class LayoutController extends Controller
 
         $this->validate($request, $rules, $messages);
 
-        $command = 'make:view newsletters.layouts.' . $this->slugify($request->name);
-        $exitCode = Artisan::call($command);
-        $fileName =  $this->slugify($request->name) . '.blade.php';
+        $fileName =  $this->slugify($request->name) . '.txt';
         $filePath =  base_path() . '/resources/views/newsletters/layouts/' . $fileName;
-        file_put_contents($filePath, $request->content, FILE_APPEND | LOCK_EX);
-        return response()->json(['returnCode' => $exitCode], 200);
+        file_put_contents($filePath, $request->content, LOCK_EX);
+        return response()->json(['message' => 'Le layout s\'est bien sauvegardé.'], $this->successStatus);
     }
 
     private function slugify($string, $delimiter = '-')

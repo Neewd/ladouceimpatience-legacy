@@ -53,6 +53,58 @@
                         >{{ errors.template[0] }}</div>
                     </div>
                 </div>
+                <div class="flex border-b border-40">
+                    <div class="w-1/5 px-8 py-6">
+                        <label for="name" class="inline-block text-80 pt-2 leading-tight">
+                            Header
+                            <span class="text-danger text-sm">*</span>
+                        </label>
+                    </div>
+                    <div class="py-6 px-8 w-1/2">
+                        <select
+                            class="block w-full form-control-sm form-select"
+                            v-model="campaign.header"
+                            :placeholder="layouts.length > 0 ? 'Veuillez sélectionner un layout' : 'Aucun layout créé pour le moment'"
+                        >
+                            <option :value="null" disabled>Select Age</option>
+                            <option
+                                :value="layout.html"
+                                v-for="(layout) in layouts"
+                                :key="layout"
+                            >{{layout.name}}</option>
+                        </select>
+                        <div
+                            v-if="errors.template"
+                            class="help-text help-text mt-2 text-danger"
+                        >{{ errors.template[0] }}</div>
+                    </div>
+                </div>
+                <div class="flex border-b border-40">
+                    <div class="w-1/5 px-8 py-6">
+                        <label for="name" class="inline-block text-80 pt-2 leading-tight">
+                            Footer
+                            <span class="text-danger text-sm">*</span>
+                        </label>
+                    </div>
+                    <div class="py-6 px-8 w-1/2">
+                        <select
+                            placeholder="Choose a template"
+                            class="block w-full form-control-sm form-select"
+                            v-model="campaign.footer"
+                        >
+                            <option
+                                :value="layout.html"
+                                v-for="(layout) in layouts"
+                                :key="layout"
+                            >{{layout.name}}</option>
+                        </select>
+                        <div
+                            v-if="errors.template"
+                            class="help-text help-text mt-2 text-danger"
+                        >{{ errors.template[0] }}</div>
+                    </div>
+                </div>
+
                 <div class="flex border-b border-40 mb-6">
                     <div class="w-1/5 px-8 py-6">
                         <label for="name" class="inline-block text-80 pt-2 leading-tight">
@@ -74,7 +126,7 @@
                         >{{ errors.sender[0] }}</div>
                     </div>
                 </div>
-                 <div class="flex border-b border-40 mb-6">
+                <div class="flex border-b border-40 mb-6">
                     <div class="w-1/5 px-8 py-6">
                         <label for="name" class="inline-block text-80 pt-2 leading-tight">
                             Description
@@ -120,13 +172,32 @@ export default {
                     this.errors = error.response.data.errors;
                 }
             });
+
+        Nova.request()
+            .get("/nova-vendor/newsletter/layouts")
+            .then(({ data }) => {
+                const regexBlade = /([a-zA-Z0-9]+\/){1,2}(([a-zA-Z0-9-_]+)\.blade\.php)/;
+                let layoutNames = [];
+                for (let i = 0; i < data.layouts.length; i++) {
+                    let layout = {
+                        name: data.layouts[i].name,
+                        html: data.layouts[i].html
+                    };
+                    layoutNames.push(layout);
+                }
+                this.layouts = layoutNames;
+            })
+            .catch(error => global.console.error(error));
     },
     data() {
         return {
             templates: [],
+            layouts: [],
             campaign: {
                 name: "",
                 template: null,
+                header: null,
+                footer: null,
                 sender: "",
                 subject: ""
             },

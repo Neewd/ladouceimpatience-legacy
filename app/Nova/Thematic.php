@@ -2,12 +2,13 @@
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Benjaminhirsch\NovaSlugField\Slug;
+use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Benjaminhirsch\NovaSlugField\TextWithSlug;
 
 class Thematic extends Resource
@@ -56,8 +57,9 @@ class Thematic extends Resource
             
             Slug::make('Slug')
                 ->sortable()
-                ->rules('required')
-                ->showUrlPreview('http://localhost:8080/category')
+                ->showUrlPreview('http://localhost:8080/products'),
+
+            BelongsToMany::make('Products')
 
         ];
     }

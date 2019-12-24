@@ -10,23 +10,23 @@ use Debugbar;
 
 class TemplateController extends Controller
 {
-
+    
     public function index(Request $request)
     {
-        $templateFilles = Storage::disk('views')->allFiles("./newsletters");
+        $templateFilles = Storage::disk('views')->files("./newsletters");
         $templates = [];
 
         for ($i = 0; $i < sizeof($templateFilles); $i++) {
             $viewName = str_replace('.blade.php', '', $templateFilles[$i]);
-            $viewFile = view($viewName);
-            $htmlView = $viewFile->render();
+            $file = file_get_contents(base_path() . '/resources/views/' . $templateFilles[$i], true);
             $view = new \stdClass();
             $view->path = $viewName;
             $view->name = str_replace('newsletters/', '', $viewName);
-            $view->html = $htmlView;
+            $view->html = $file;
             array_push($templates, $view);
+
         }
-        return response()->json(['templates' => $templates], 200);
+        return response()->json(['templates' => $templates], $this->successStatus);
     }
 
     public function get(Request $request)
@@ -34,41 +34,36 @@ class TemplateController extends Controller
         $viewFile = view("newsletters/" . $request->name);
         $htmlView = $viewFile->render();
         $view = new \stdClass();
-        $view->path = "newsletters/" . $request->name . ".blade.php";
+        $view->path = "newsletters/" . $request->name . ".txt";
         $view->name = $request->name;
         $view->html = $htmlView;
 
-        return response()->json(['template' => $view], 200);
+        return response()->json(['template' => $view], $this->successStatus);
     }
 
     public function delete(Request $request)
     {
-        $deleteSuccess = Storage::disk('views')->delete("./newsletters/" . $request->name . ".blade.php");
+        $deleteSuccess = Storage::disk('views')->delete("./newsletters/" . $request->name . ".txt");
 
         return response()->json(['returnCode' => $deleteSuccess]);
     }
 
     public function save(Request $request)
     {
-
         $rules = array(
             'name' => 'required',
             'content'   => 'required'
         );
-
         $messages = [
             'name.required' => "Un nom pour ce joli template ?",
             'content.required' => "Il manque un contenu peut être ?"
         ];
 
         $this->validate($request, $rules, $messages);
-
-        $command = 'make:view newsletters.' . $this->slugify($request->name);
-        $exitCode = Artisan::call($command);
-        $fileName =  $this->slugify($request->name) . '.blade.php';
+        $fileName =  $this->slugify($request->name) . '.txt';
         $filePath =  base_path() . '/resources/views/newsletters/' . $fileName;
-        file_put_contents($filePath, $request->content, FILE_APPEND | LOCK_EX);
-        return response()->json(['returnCode' => $exitCode], 200);
+        file_put_contents($filePath, $request->content, LOCK_EX);
+        return response()->json(['message' => 'Le template s\'est bien sauvegardé.'], $this->successStatus);
     }
 
     private function slugify($string, $delimiter = '-')

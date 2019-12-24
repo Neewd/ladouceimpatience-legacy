@@ -19,8 +19,15 @@ class CreateParticipantTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->date('birth_date');
+            $table->integer('list_id');
+            $table->string('unsubscribe_token');
+            $table->bigInteger('unsubscribe_reason_id')->unsigned()->nullable();
             $table->timestamps();
         });
+
+        Schema::table('participant', function($table) {            
+            $table->foreign('unsubscribe_reason_id')->references('id')->on('unsubscribe_reasons');
+		});
     }
 
     /**

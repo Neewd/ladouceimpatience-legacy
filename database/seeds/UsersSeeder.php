@@ -1,6 +1,8 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class UsersSeeder extends Seeder
 {
@@ -23,6 +25,9 @@ class UsersSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+        Role::create(['name' => 'user']);
+        Role::create(['name' => 'admin']);
+        User::where('email', '=', 'clement.bacouelle@gmail.com')->first()->assignRole('admin');
         DB::table('users')->insert([
             'firstname' => 'Marine',
             'lastname' => 'Poncet',

@@ -14,7 +14,7 @@ class ModifyThematicsTable extends Migration
     public function up()
     {
         Schema::table('thematic', function(Blueprint $table) {
-            $table->string('slug');
+            $table->string('slug')->nullable();
         });
     }
 

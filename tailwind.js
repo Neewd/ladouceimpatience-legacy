@@ -329,7 +329,9 @@ module.exports = {
       screen: '100vh',
     }),
     inset: {
+      'minus-40': '-40px',
       '0': '0',
+      '40': '40px',
       auto: 'auto',
     },
     letterSpacing: {
@@ -523,6 +525,53 @@ module.exports = {
       'l': 'left',
       'tl': 'top left',
     },
+    transitionProperty: { // defaults to these values
+      'none': 'none',
+      'all': 'all',
+      'color': 'color',
+      'bg': 'background-color',
+      'border': 'border-color',
+      'colors': ['color', 'background-color', 'border-color'],
+      'opacity': 'opacity',
+      'transform': 'transform',
+      'opacity-top': 'opacity, top',
+    },
+    transitionDuration: { // defaults to these values
+      'default': '250ms',
+      '0': '0ms',
+      '100': '100ms',
+      '250': '250ms',
+      '500': '500ms',
+      '750': '750ms',
+      '1000': '1000ms',
+      '2-3': '0.2s, 0.3s'
+    },
+    transitionTimingFunction: { // defaults to these values
+      'default': 'ease',
+      'linear': 'linear',
+      'ease': 'ease',
+      'ease-in': 'ease-in',
+      'ease-out': 'ease-out',
+      'ease-in-out': 'ease-in-out',
+      'ease-ease' : 'ease, ease'
+    },
+    transitionDelay: { // defaults to these values
+      'default': '0ms',
+      '0': '0ms',
+      '100': '100ms',
+      '250': '250ms',
+      '500': '500ms',
+      '750': '750ms',
+      '1000': '1000ms',
+      'product': ' 0.1s, 0s'
+    },
+    willChange: { // defaults to these values
+      'auto': 'auto',
+      'scroll': 'scroll-position',
+      'contents': 'contents',
+      'opacity': 'opacity',
+      'transform': 'transform',
+    },
   },
   variants: {
     accessibility: ['responsive', 'focus'],
@@ -556,7 +605,7 @@ module.exports = {
     fontStyle: ['responsive'],
     fontWeight: ['responsive', 'hover', 'focus'],
     height: ['responsive'],
-    inset: ['responsive'],
+    inset: ['responsive','hover', 'group-hover'],
     justifyContent: ['responsive'],
     letterSpacing: ['responsive'],
     lineHeight: ['responsive'],
@@ -603,6 +652,12 @@ module.exports = {
     transformStyle: ['responsive'],
     backfaceVisibility: ['responsive'],
     transformBox: ['responsive'],
+    // Tailwind transition 
+    transitionProperty: ['responsive'],
+    transitionDuration: ['responsive'],
+    transitionTimingFunction: ['responsive'],
+    transitionDelay: ['responsive'],
+    willChange: ['responsive'],
   },
   corePlugins: {},
   plugins: [
@@ -610,5 +665,6 @@ module.exports = {
       '3d': false,
     }),
     require('@tailwindcss/custom-forms'),
+    require('tailwindcss-transitions')()
   ],
 }

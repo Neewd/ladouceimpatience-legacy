@@ -16,9 +16,9 @@ class CreateProductsThematicsTable extends Migration
         Schema::create('products_thematics', function(Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('order');
             $table->integer('thematic_id')->unsigned();
-            $table->integer('product_id')->unsigned();
+            $table->bigInteger('product_id')->unsigned();
+            $table->boolean('primary')->nullable();
         });
 
         Schema::table('products_thematics', function($table) {            

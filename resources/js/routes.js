@@ -1,10 +1,18 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-
 Vue.use(VueRouter);
 
 import HomeComponent from './components/HomeComponent';
 import MainContentComponent from './components/MainContentComponent';
+
+// Thematic 
+import ThematicProductsComponent from './components/thematic/ThematicProductsComponent';
+
+// Products
+import ProductsRouteComponent from './components/products/ProductsRouteComponent';
+import ProductsComponent from './components/products/ProductsComponent';
+import ProductViewComponent from './components/products/ProductViewComponent';
+import ProductsListRouteComponent from './components/products/ProductsListRouteComponent';
 
 // Auth
 import AuthComponent from './components/auth/AuthComponent';
@@ -15,44 +23,70 @@ import ResetPasswordComponent from './components/auth/ResetPasswordComponent';
 // Account
 import AccountComponent from './components/account/AccountComponent';
 
-const routes =  [
-		{ 
-			path : '/' , 
-			component: HomeComponent,
-			children: [
-				{ path : '', component: MainContentComponent, name: 'home' },
-				{ 
-					path : 'auth', 
-					name : 'auth',
-					component: AuthComponent,
-					meta: { 
-		                guest: true
+// Others 
+import NotFoundComponent from './components/NotFoundComponent';
+
+const routes = [
+	{
+		path: '/',
+		component: HomeComponent,
+		children: [
+			{
+				path: '',
+				component: MainContentComponent,
+				name: 'home',
+			},
+			{
+				path: 'auth',
+				name: 'auth',
+				component: AuthComponent,
+				meta: {
+					guest: true,
+				},
+				children: [
+					{
+						path: '',
+						name: 'connexion',
+						component: ConnexionComponent,
 					},
-					children :[
-						{
-							path : '', 
-							name : 'connexion',
-							component: ConnexionComponent
-						},
-						{
-							path : 'reset/password', 
-							name : 'reset-password',
-							component: ResetPasswordComponent
-						}		
-					]
-		        },
-		     	{
-		       		path: 'account',
-		       		name: 'account',
-		       		component: AccountComponent,
-		       		meta: { 
-		                requiresAuth: true
-		            }
-		       	},
-				{ path : 'email/verify/:id', component: VerifyEmailComponent },
-				{ path : 'user/reset/password', component: ResetPasswordComponent }
-			]
-		},
+					{
+						path: 'reset/password',
+						name: 'reset-password',
+						component: ResetPasswordComponent
+					}
+				]
+			},
+			{
+				path: 'account',
+				name: 'account',
+				component: AccountComponent,
+				meta: {
+					requiresAuth: true,
+				}
+			},
+			
+			{
+				path: 'thematic/:thematicSlug([a-z-]+)',
+				name: 'thematic-products',
+				component: ThematicProductsComponent,
+				meta: {
+					requiresAuth: false,
+				}
+			},
+			{
+				path: ':thematicSlug([a-z-]+)/:productId(\\d+)',
+				name: 'product-page',
+				component: ProductViewComponent,
+				meta: {
+					requiresAuth: false,
+				}
+			},
+			{ path: 'email/verify/:id', component: VerifyEmailComponent },
+			{ path: 'user/reset/password', component: ResetPasswordComponent },
+		]
+	},
+	{ path: '/404', component: NotFoundComponent },
+	{ path: '*', redirect: '/404' },
 ];
 
 export default new VueRouter({

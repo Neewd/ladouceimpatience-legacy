@@ -2,13 +2,16 @@
 
 namespace App;
 
+use DateTime;
+use Debugbar;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Participant extends Model
 {
     protected $table = 'participant';
     public $timestamps = true;
-    protected $fillable = ['email','firstname', 'lastname', 'birth_date' ];
+    protected $fillable = ['email','firstname', 'lastname', 'birth_date', 'unsubscribe_reason' ];
 
     protected $dates = [
         'created_at',
@@ -16,8 +19,17 @@ class Participant extends Model
         'birth_date',
     ];
 
-    public function newsletter()
+    protected $hidden = [ 'unsubscribe_token' ];
+
+    public function setBirthDateAttribute($value)
     {
-        return $this->belongsToMany('\App\Newsletter');
+        $date = DateTime::createFromFormat("d-m-Y", $value);
+        $this->attributes['birth_date'] = $date;
     }
+
+    public function getBirthDateAttribute($value)
+    {
+        return (new Carbon($value))->format('d-m-Y');
+    }
+
 }

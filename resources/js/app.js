@@ -3,6 +3,7 @@ import router from './routes';
 import VueTailwind from 'vue-tailwind'
 
 Vue.use(VueTailwind)
+Vue.component('breadcrumb', require('./components/BreadcrumbComponent').default)
 
 router.beforeEach((to, from, next) => {
     if(to.matched.some(record => record.meta.requiresAuth)) {

@@ -599,6 +599,10 @@ video {
   height: auto;
 }
 
+*, *::before, *::after {
+  --transition-duration: 250ms;
+}
+
 .container {
   width: 100%;
 }
@@ -12240,6 +12244,20 @@ video {
   left: 0;
 }
 
+.inset-40 {
+  top: 40px;
+  right: 40px;
+  bottom: 40px;
+  left: 40px;
+}
+
+.inset-minus-40 {
+  top: -40px;
+  right: -40px;
+  bottom: -40px;
+  left: -40px;
+}
+
 .inset-auto {
   top: auto;
   right: auto;
@@ -12255,6 +12273,26 @@ video {
 .inset-x-0 {
   right: 0;
   left: 0;
+}
+
+.inset-y-40 {
+  top: 40px;
+  bottom: 40px;
+}
+
+.inset-x-40 {
+  right: 40px;
+  left: 40px;
+}
+
+.inset-y-minus-40 {
+  top: -40px;
+  bottom: -40px;
+}
+
+.inset-x-minus-40 {
+  right: -40px;
+  left: -40px;
 }
 
 .inset-y-auto {
@@ -12283,6 +12321,38 @@ video {
   left: 0;
 }
 
+.top-40 {
+  top: 40px;
+}
+
+.right-40 {
+  right: 40px;
+}
+
+.bottom-40 {
+  bottom: 40px;
+}
+
+.left-40 {
+  left: 40px;
+}
+
+.top-minus-40 {
+  top: -40px;
+}
+
+.right-minus-40 {
+  right: -40px;
+}
+
+.bottom-minus-40 {
+  bottom: -40px;
+}
+
+.left-minus-40 {
+  left: -40px;
+}
+
 .top-auto {
   top: auto;
 }
@@ -12296,6 +12366,270 @@ video {
 }
 
 .left-auto {
+  left: auto;
+}
+
+.hover\:inset-0:hover {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hover\:inset-40:hover {
+  top: 40px;
+  right: 40px;
+  bottom: 40px;
+  left: 40px;
+}
+
+.hover\:inset-minus-40:hover {
+  top: -40px;
+  right: -40px;
+  bottom: -40px;
+  left: -40px;
+}
+
+.hover\:inset-auto:hover {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.hover\:inset-y-0:hover {
+  top: 0;
+  bottom: 0;
+}
+
+.hover\:inset-x-0:hover {
+  right: 0;
+  left: 0;
+}
+
+.hover\:inset-y-40:hover {
+  top: 40px;
+  bottom: 40px;
+}
+
+.hover\:inset-x-40:hover {
+  right: 40px;
+  left: 40px;
+}
+
+.hover\:inset-y-minus-40:hover {
+  top: -40px;
+  bottom: -40px;
+}
+
+.hover\:inset-x-minus-40:hover {
+  right: -40px;
+  left: -40px;
+}
+
+.hover\:inset-y-auto:hover {
+  top: auto;
+  bottom: auto;
+}
+
+.hover\:inset-x-auto:hover {
+  right: auto;
+  left: auto;
+}
+
+.hover\:top-0:hover {
+  top: 0;
+}
+
+.hover\:right-0:hover {
+  right: 0;
+}
+
+.hover\:bottom-0:hover {
+  bottom: 0;
+}
+
+.hover\:left-0:hover {
+  left: 0;
+}
+
+.hover\:top-40:hover {
+  top: 40px;
+}
+
+.hover\:right-40:hover {
+  right: 40px;
+}
+
+.hover\:bottom-40:hover {
+  bottom: 40px;
+}
+
+.hover\:left-40:hover {
+  left: 40px;
+}
+
+.hover\:top-minus-40:hover {
+  top: -40px;
+}
+
+.hover\:right-minus-40:hover {
+  right: -40px;
+}
+
+.hover\:bottom-minus-40:hover {
+  bottom: -40px;
+}
+
+.hover\:left-minus-40:hover {
+  left: -40px;
+}
+
+.hover\:top-auto:hover {
+  top: auto;
+}
+
+.hover\:right-auto:hover {
+  right: auto;
+}
+
+.hover\:bottom-auto:hover {
+  bottom: auto;
+}
+
+.hover\:left-auto:hover {
+  left: auto;
+}
+
+.group:hover .group-hover\:inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.group:hover .group-hover\:inset-40 {
+  top: 40px;
+  right: 40px;
+  bottom: 40px;
+  left: 40px;
+}
+
+.group:hover .group-hover\:inset-minus-40 {
+  top: -40px;
+  right: -40px;
+  bottom: -40px;
+  left: -40px;
+}
+
+.group:hover .group-hover\:inset-auto {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.group:hover .group-hover\:inset-y-0 {
+  top: 0;
+  bottom: 0;
+}
+
+.group:hover .group-hover\:inset-x-0 {
+  right: 0;
+  left: 0;
+}
+
+.group:hover .group-hover\:inset-y-40 {
+  top: 40px;
+  bottom: 40px;
+}
+
+.group:hover .group-hover\:inset-x-40 {
+  right: 40px;
+  left: 40px;
+}
+
+.group:hover .group-hover\:inset-y-minus-40 {
+  top: -40px;
+  bottom: -40px;
+}
+
+.group:hover .group-hover\:inset-x-minus-40 {
+  right: -40px;
+  left: -40px;
+}
+
+.group:hover .group-hover\:inset-y-auto {
+  top: auto;
+  bottom: auto;
+}
+
+.group:hover .group-hover\:inset-x-auto {
+  right: auto;
+  left: auto;
+}
+
+.group:hover .group-hover\:top-0 {
+  top: 0;
+}
+
+.group:hover .group-hover\:right-0 {
+  right: 0;
+}
+
+.group:hover .group-hover\:bottom-0 {
+  bottom: 0;
+}
+
+.group:hover .group-hover\:left-0 {
+  left: 0;
+}
+
+.group:hover .group-hover\:top-40 {
+  top: 40px;
+}
+
+.group:hover .group-hover\:right-40 {
+  right: 40px;
+}
+
+.group:hover .group-hover\:bottom-40 {
+  bottom: 40px;
+}
+
+.group:hover .group-hover\:left-40 {
+  left: 40px;
+}
+
+.group:hover .group-hover\:top-minus-40 {
+  top: -40px;
+}
+
+.group:hover .group-hover\:right-minus-40 {
+  right: -40px;
+}
+
+.group:hover .group-hover\:bottom-minus-40 {
+  bottom: -40px;
+}
+
+.group:hover .group-hover\:left-minus-40 {
+  left: -40px;
+}
+
+.group:hover .group-hover\:top-auto {
+  top: auto;
+}
+
+.group:hover .group-hover\:right-auto {
+  right: auto;
+}
+
+.group:hover .group-hover\:bottom-auto {
+  bottom: auto;
+}
+
+.group:hover .group-hover\:left-auto {
   left: auto;
 }
 
@@ -14296,6 +14630,230 @@ video {
 
 .transform-view {
   transform-box: view-box;
+}
+
+.transition-none {
+  -webkit-transition-property: none;
+  transition-property: none;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-all {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-color {
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-bg {
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-border {
+  -webkit-transition-property: border-color;
+  transition-property: border-color;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-colors {
+  -webkit-transition-property: color, background-color, border-color;
+  transition-property: color, background-color, border-color;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-opacity {
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-transform {
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-opacity-top {
+  -webkit-transition-property: opacity, top;
+  transition-property: opacity, top;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-0 {
+  --transition-duration: 0ms;
+  -webkit-transition-duration: 0ms;
+          transition-duration: 0ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-100 {
+  --transition-duration: 100ms;
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-250 {
+  --transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-500 {
+  --transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-750 {
+  --transition-duration: 750ms;
+  -webkit-transition-duration: 750ms;
+          transition-duration: 750ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-1000 {
+  --transition-duration: 1000ms;
+  -webkit-transition-duration: 1000ms;
+          transition-duration: 1000ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-2-3 {
+  --transition-duration: 0.2s, 0.3s;
+  -webkit-transition-duration: 0.2s, 0.3s;
+          transition-duration: 0.2s, 0.3s;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-linear {
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+.transition-ease {
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.transition-ease-in {
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+}
+
+.transition-ease-out {
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+
+.transition-ease-in-out {
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+.transition-ease-ease {
+  -webkit-transition-timing-function: ease, ease;
+          transition-timing-function: ease, ease;
+}
+
+.transition-delay-0 {
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+
+.transition-delay-100 {
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+
+.transition-delay-250 {
+  -webkit-transition-delay: 250ms;
+          transition-delay: 250ms;
+}
+
+.transition-delay-500 {
+  -webkit-transition-delay: 500ms;
+          transition-delay: 500ms;
+}
+
+.transition-delay-750 {
+  -webkit-transition-delay: 750ms;
+          transition-delay: 750ms;
+}
+
+.transition-delay-1000 {
+  -webkit-transition-delay: 1000ms;
+          transition-delay: 1000ms;
+}
+
+.transition-delay-product {
+  -webkit-transition-delay:  0.1s, 0s;
+          transition-delay:  0.1s, 0s;
+}
+
+.will-change-auto {
+  will-change: auto;
+}
+
+.will-change-scroll {
+  will-change: scroll-position;
+}
+
+.will-change-contents {
+  will-change: contents;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.will-change-transform {
+  will-change: transform;
 }
 
 @media (min-width: 640px) {
@@ -25655,6 +26213,20 @@ video {
     left: 0;
   }
 
+  .sm\:inset-40 {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .sm\:inset-minus-40 {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
   .sm\:inset-auto {
     top: auto;
     right: auto;
@@ -25670,6 +26242,26 @@ video {
   .sm\:inset-x-0 {
     right: 0;
     left: 0;
+  }
+
+  .sm\:inset-y-40 {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .sm\:inset-x-40 {
+    right: 40px;
+    left: 40px;
+  }
+
+  .sm\:inset-y-minus-40 {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .sm\:inset-x-minus-40 {
+    right: -40px;
+    left: -40px;
   }
 
   .sm\:inset-y-auto {
@@ -25698,6 +26290,38 @@ video {
     left: 0;
   }
 
+  .sm\:top-40 {
+    top: 40px;
+  }
+
+  .sm\:right-40 {
+    right: 40px;
+  }
+
+  .sm\:bottom-40 {
+    bottom: 40px;
+  }
+
+  .sm\:left-40 {
+    left: 40px;
+  }
+
+  .sm\:top-minus-40 {
+    top: -40px;
+  }
+
+  .sm\:right-minus-40 {
+    right: -40px;
+  }
+
+  .sm\:bottom-minus-40 {
+    bottom: -40px;
+  }
+
+  .sm\:left-minus-40 {
+    left: -40px;
+  }
+
   .sm\:top-auto {
     top: auto;
   }
@@ -25711,6 +26335,270 @@ video {
   }
 
   .sm\:left-auto {
+    left: auto;
+  }
+
+  .sm\:hover\:inset-0:hover {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .sm\:hover\:inset-40:hover {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .sm\:hover\:inset-minus-40:hover {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
+  .sm\:hover\:inset-auto:hover {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .sm\:hover\:inset-y-0:hover {
+    top: 0;
+    bottom: 0;
+  }
+
+  .sm\:hover\:inset-x-0:hover {
+    right: 0;
+    left: 0;
+  }
+
+  .sm\:hover\:inset-y-40:hover {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .sm\:hover\:inset-x-40:hover {
+    right: 40px;
+    left: 40px;
+  }
+
+  .sm\:hover\:inset-y-minus-40:hover {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .sm\:hover\:inset-x-minus-40:hover {
+    right: -40px;
+    left: -40px;
+  }
+
+  .sm\:hover\:inset-y-auto:hover {
+    top: auto;
+    bottom: auto;
+  }
+
+  .sm\:hover\:inset-x-auto:hover {
+    right: auto;
+    left: auto;
+  }
+
+  .sm\:hover\:top-0:hover {
+    top: 0;
+  }
+
+  .sm\:hover\:right-0:hover {
+    right: 0;
+  }
+
+  .sm\:hover\:bottom-0:hover {
+    bottom: 0;
+  }
+
+  .sm\:hover\:left-0:hover {
+    left: 0;
+  }
+
+  .sm\:hover\:top-40:hover {
+    top: 40px;
+  }
+
+  .sm\:hover\:right-40:hover {
+    right: 40px;
+  }
+
+  .sm\:hover\:bottom-40:hover {
+    bottom: 40px;
+  }
+
+  .sm\:hover\:left-40:hover {
+    left: 40px;
+  }
+
+  .sm\:hover\:top-minus-40:hover {
+    top: -40px;
+  }
+
+  .sm\:hover\:right-minus-40:hover {
+    right: -40px;
+  }
+
+  .sm\:hover\:bottom-minus-40:hover {
+    bottom: -40px;
+  }
+
+  .sm\:hover\:left-minus-40:hover {
+    left: -40px;
+  }
+
+  .sm\:hover\:top-auto:hover {
+    top: auto;
+  }
+
+  .sm\:hover\:right-auto:hover {
+    right: auto;
+  }
+
+  .sm\:hover\:bottom-auto:hover {
+    bottom: auto;
+  }
+
+  .sm\:hover\:left-auto:hover {
+    left: auto;
+  }
+
+  .group:hover .sm\:group-hover\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .group:hover .sm\:group-hover\:inset-40 {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .group:hover .sm\:group-hover\:inset-minus-40 {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
+  .group:hover .sm\:group-hover\:inset-auto {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .group:hover .sm\:group-hover\:inset-y-0 {
+    top: 0;
+    bottom: 0;
+  }
+
+  .group:hover .sm\:group-hover\:inset-x-0 {
+    right: 0;
+    left: 0;
+  }
+
+  .group:hover .sm\:group-hover\:inset-y-40 {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .group:hover .sm\:group-hover\:inset-x-40 {
+    right: 40px;
+    left: 40px;
+  }
+
+  .group:hover .sm\:group-hover\:inset-y-minus-40 {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .group:hover .sm\:group-hover\:inset-x-minus-40 {
+    right: -40px;
+    left: -40px;
+  }
+
+  .group:hover .sm\:group-hover\:inset-y-auto {
+    top: auto;
+    bottom: auto;
+  }
+
+  .group:hover .sm\:group-hover\:inset-x-auto {
+    right: auto;
+    left: auto;
+  }
+
+  .group:hover .sm\:group-hover\:top-0 {
+    top: 0;
+  }
+
+  .group:hover .sm\:group-hover\:right-0 {
+    right: 0;
+  }
+
+  .group:hover .sm\:group-hover\:bottom-0 {
+    bottom: 0;
+  }
+
+  .group:hover .sm\:group-hover\:left-0 {
+    left: 0;
+  }
+
+  .group:hover .sm\:group-hover\:top-40 {
+    top: 40px;
+  }
+
+  .group:hover .sm\:group-hover\:right-40 {
+    right: 40px;
+  }
+
+  .group:hover .sm\:group-hover\:bottom-40 {
+    bottom: 40px;
+  }
+
+  .group:hover .sm\:group-hover\:left-40 {
+    left: 40px;
+  }
+
+  .group:hover .sm\:group-hover\:top-minus-40 {
+    top: -40px;
+  }
+
+  .group:hover .sm\:group-hover\:right-minus-40 {
+    right: -40px;
+  }
+
+  .group:hover .sm\:group-hover\:bottom-minus-40 {
+    bottom: -40px;
+  }
+
+  .group:hover .sm\:group-hover\:left-minus-40 {
+    left: -40px;
+  }
+
+  .group:hover .sm\:group-hover\:top-auto {
+    top: auto;
+  }
+
+  .group:hover .sm\:group-hover\:right-auto {
+    right: auto;
+  }
+
+  .group:hover .sm\:group-hover\:bottom-auto {
+    bottom: auto;
+  }
+
+  .group:hover .sm\:group-hover\:left-auto {
     left: auto;
   }
 
@@ -27711,6 +28599,230 @@ video {
 
   .sm\:transform-view {
     transform-box: view-box;
+  }
+
+  .sm\:transition-none {
+    -webkit-transition-property: none;
+    transition-property: none;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-all {
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-color {
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-bg {
+    -webkit-transition-property: background-color;
+    transition-property: background-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-border {
+    -webkit-transition-property: border-color;
+    transition-property: border-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-colors {
+    -webkit-transition-property: color, background-color, border-color;
+    transition-property: color, background-color, border-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-opacity {
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-transform {
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-opacity-top {
+    -webkit-transition-property: opacity, top;
+    transition-property: opacity, top;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-0 {
+    --transition-duration: 0ms;
+    -webkit-transition-duration: 0ms;
+            transition-duration: 0ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-100 {
+    --transition-duration: 100ms;
+    -webkit-transition-duration: 100ms;
+            transition-duration: 100ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-250 {
+    --transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-500 {
+    --transition-duration: 500ms;
+    -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-750 {
+    --transition-duration: 750ms;
+    -webkit-transition-duration: 750ms;
+            transition-duration: 750ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-1000 {
+    --transition-duration: 1000ms;
+    -webkit-transition-duration: 1000ms;
+            transition-duration: 1000ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-2-3 {
+    --transition-duration: 0.2s, 0.3s;
+    -webkit-transition-duration: 0.2s, 0.3s;
+            transition-duration: 0.2s, 0.3s;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .sm\:transition-linear {
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+  }
+
+  .sm\:transition-ease {
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+  }
+
+  .sm\:transition-ease-in {
+    -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+  }
+
+  .sm\:transition-ease-out {
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+  }
+
+  .sm\:transition-ease-in-out {
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+  }
+
+  .sm\:transition-ease-ease {
+    -webkit-transition-timing-function: ease, ease;
+            transition-timing-function: ease, ease;
+  }
+
+  .sm\:transition-delay-0 {
+    -webkit-transition-delay: 0ms;
+            transition-delay: 0ms;
+  }
+
+  .sm\:transition-delay-100 {
+    -webkit-transition-delay: 100ms;
+            transition-delay: 100ms;
+  }
+
+  .sm\:transition-delay-250 {
+    -webkit-transition-delay: 250ms;
+            transition-delay: 250ms;
+  }
+
+  .sm\:transition-delay-500 {
+    -webkit-transition-delay: 500ms;
+            transition-delay: 500ms;
+  }
+
+  .sm\:transition-delay-750 {
+    -webkit-transition-delay: 750ms;
+            transition-delay: 750ms;
+  }
+
+  .sm\:transition-delay-1000 {
+    -webkit-transition-delay: 1000ms;
+            transition-delay: 1000ms;
+  }
+
+  .sm\:transition-delay-product {
+    -webkit-transition-delay:  0.1s, 0s;
+            transition-delay:  0.1s, 0s;
+  }
+
+  .sm\:will-change-auto {
+    will-change: auto;
+  }
+
+  .sm\:will-change-scroll {
+    will-change: scroll-position;
+  }
+
+  .sm\:will-change-contents {
+    will-change: contents;
+  }
+
+  .sm\:will-change-opacity {
+    will-change: opacity;
+  }
+
+  .sm\:will-change-transform {
+    will-change: transform;
   }
 }
 
@@ -39071,6 +40183,20 @@ video {
     left: 0;
   }
 
+  .md\:inset-40 {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .md\:inset-minus-40 {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
   .md\:inset-auto {
     top: auto;
     right: auto;
@@ -39086,6 +40212,26 @@ video {
   .md\:inset-x-0 {
     right: 0;
     left: 0;
+  }
+
+  .md\:inset-y-40 {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .md\:inset-x-40 {
+    right: 40px;
+    left: 40px;
+  }
+
+  .md\:inset-y-minus-40 {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .md\:inset-x-minus-40 {
+    right: -40px;
+    left: -40px;
   }
 
   .md\:inset-y-auto {
@@ -39114,6 +40260,38 @@ video {
     left: 0;
   }
 
+  .md\:top-40 {
+    top: 40px;
+  }
+
+  .md\:right-40 {
+    right: 40px;
+  }
+
+  .md\:bottom-40 {
+    bottom: 40px;
+  }
+
+  .md\:left-40 {
+    left: 40px;
+  }
+
+  .md\:top-minus-40 {
+    top: -40px;
+  }
+
+  .md\:right-minus-40 {
+    right: -40px;
+  }
+
+  .md\:bottom-minus-40 {
+    bottom: -40px;
+  }
+
+  .md\:left-minus-40 {
+    left: -40px;
+  }
+
   .md\:top-auto {
     top: auto;
   }
@@ -39127,6 +40305,270 @@ video {
   }
 
   .md\:left-auto {
+    left: auto;
+  }
+
+  .md\:hover\:inset-0:hover {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .md\:hover\:inset-40:hover {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .md\:hover\:inset-minus-40:hover {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
+  .md\:hover\:inset-auto:hover {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .md\:hover\:inset-y-0:hover {
+    top: 0;
+    bottom: 0;
+  }
+
+  .md\:hover\:inset-x-0:hover {
+    right: 0;
+    left: 0;
+  }
+
+  .md\:hover\:inset-y-40:hover {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .md\:hover\:inset-x-40:hover {
+    right: 40px;
+    left: 40px;
+  }
+
+  .md\:hover\:inset-y-minus-40:hover {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .md\:hover\:inset-x-minus-40:hover {
+    right: -40px;
+    left: -40px;
+  }
+
+  .md\:hover\:inset-y-auto:hover {
+    top: auto;
+    bottom: auto;
+  }
+
+  .md\:hover\:inset-x-auto:hover {
+    right: auto;
+    left: auto;
+  }
+
+  .md\:hover\:top-0:hover {
+    top: 0;
+  }
+
+  .md\:hover\:right-0:hover {
+    right: 0;
+  }
+
+  .md\:hover\:bottom-0:hover {
+    bottom: 0;
+  }
+
+  .md\:hover\:left-0:hover {
+    left: 0;
+  }
+
+  .md\:hover\:top-40:hover {
+    top: 40px;
+  }
+
+  .md\:hover\:right-40:hover {
+    right: 40px;
+  }
+
+  .md\:hover\:bottom-40:hover {
+    bottom: 40px;
+  }
+
+  .md\:hover\:left-40:hover {
+    left: 40px;
+  }
+
+  .md\:hover\:top-minus-40:hover {
+    top: -40px;
+  }
+
+  .md\:hover\:right-minus-40:hover {
+    right: -40px;
+  }
+
+  .md\:hover\:bottom-minus-40:hover {
+    bottom: -40px;
+  }
+
+  .md\:hover\:left-minus-40:hover {
+    left: -40px;
+  }
+
+  .md\:hover\:top-auto:hover {
+    top: auto;
+  }
+
+  .md\:hover\:right-auto:hover {
+    right: auto;
+  }
+
+  .md\:hover\:bottom-auto:hover {
+    bottom: auto;
+  }
+
+  .md\:hover\:left-auto:hover {
+    left: auto;
+  }
+
+  .group:hover .md\:group-hover\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .group:hover .md\:group-hover\:inset-40 {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .group:hover .md\:group-hover\:inset-minus-40 {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
+  .group:hover .md\:group-hover\:inset-auto {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .group:hover .md\:group-hover\:inset-y-0 {
+    top: 0;
+    bottom: 0;
+  }
+
+  .group:hover .md\:group-hover\:inset-x-0 {
+    right: 0;
+    left: 0;
+  }
+
+  .group:hover .md\:group-hover\:inset-y-40 {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .group:hover .md\:group-hover\:inset-x-40 {
+    right: 40px;
+    left: 40px;
+  }
+
+  .group:hover .md\:group-hover\:inset-y-minus-40 {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .group:hover .md\:group-hover\:inset-x-minus-40 {
+    right: -40px;
+    left: -40px;
+  }
+
+  .group:hover .md\:group-hover\:inset-y-auto {
+    top: auto;
+    bottom: auto;
+  }
+
+  .group:hover .md\:group-hover\:inset-x-auto {
+    right: auto;
+    left: auto;
+  }
+
+  .group:hover .md\:group-hover\:top-0 {
+    top: 0;
+  }
+
+  .group:hover .md\:group-hover\:right-0 {
+    right: 0;
+  }
+
+  .group:hover .md\:group-hover\:bottom-0 {
+    bottom: 0;
+  }
+
+  .group:hover .md\:group-hover\:left-0 {
+    left: 0;
+  }
+
+  .group:hover .md\:group-hover\:top-40 {
+    top: 40px;
+  }
+
+  .group:hover .md\:group-hover\:right-40 {
+    right: 40px;
+  }
+
+  .group:hover .md\:group-hover\:bottom-40 {
+    bottom: 40px;
+  }
+
+  .group:hover .md\:group-hover\:left-40 {
+    left: 40px;
+  }
+
+  .group:hover .md\:group-hover\:top-minus-40 {
+    top: -40px;
+  }
+
+  .group:hover .md\:group-hover\:right-minus-40 {
+    right: -40px;
+  }
+
+  .group:hover .md\:group-hover\:bottom-minus-40 {
+    bottom: -40px;
+  }
+
+  .group:hover .md\:group-hover\:left-minus-40 {
+    left: -40px;
+  }
+
+  .group:hover .md\:group-hover\:top-auto {
+    top: auto;
+  }
+
+  .group:hover .md\:group-hover\:right-auto {
+    right: auto;
+  }
+
+  .group:hover .md\:group-hover\:bottom-auto {
+    bottom: auto;
+  }
+
+  .group:hover .md\:group-hover\:left-auto {
     left: auto;
   }
 
@@ -41127,6 +42569,230 @@ video {
 
   .md\:transform-view {
     transform-box: view-box;
+  }
+
+  .md\:transition-none {
+    -webkit-transition-property: none;
+    transition-property: none;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-all {
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-color {
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-bg {
+    -webkit-transition-property: background-color;
+    transition-property: background-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-border {
+    -webkit-transition-property: border-color;
+    transition-property: border-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-colors {
+    -webkit-transition-property: color, background-color, border-color;
+    transition-property: color, background-color, border-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-opacity {
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-transform {
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-opacity-top {
+    -webkit-transition-property: opacity, top;
+    transition-property: opacity, top;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-0 {
+    --transition-duration: 0ms;
+    -webkit-transition-duration: 0ms;
+            transition-duration: 0ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-100 {
+    --transition-duration: 100ms;
+    -webkit-transition-duration: 100ms;
+            transition-duration: 100ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-250 {
+    --transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-500 {
+    --transition-duration: 500ms;
+    -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-750 {
+    --transition-duration: 750ms;
+    -webkit-transition-duration: 750ms;
+            transition-duration: 750ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-1000 {
+    --transition-duration: 1000ms;
+    -webkit-transition-duration: 1000ms;
+            transition-duration: 1000ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-2-3 {
+    --transition-duration: 0.2s, 0.3s;
+    -webkit-transition-duration: 0.2s, 0.3s;
+            transition-duration: 0.2s, 0.3s;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .md\:transition-linear {
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+  }
+
+  .md\:transition-ease {
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+  }
+
+  .md\:transition-ease-in {
+    -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+  }
+
+  .md\:transition-ease-out {
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+  }
+
+  .md\:transition-ease-in-out {
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+  }
+
+  .md\:transition-ease-ease {
+    -webkit-transition-timing-function: ease, ease;
+            transition-timing-function: ease, ease;
+  }
+
+  .md\:transition-delay-0 {
+    -webkit-transition-delay: 0ms;
+            transition-delay: 0ms;
+  }
+
+  .md\:transition-delay-100 {
+    -webkit-transition-delay: 100ms;
+            transition-delay: 100ms;
+  }
+
+  .md\:transition-delay-250 {
+    -webkit-transition-delay: 250ms;
+            transition-delay: 250ms;
+  }
+
+  .md\:transition-delay-500 {
+    -webkit-transition-delay: 500ms;
+            transition-delay: 500ms;
+  }
+
+  .md\:transition-delay-750 {
+    -webkit-transition-delay: 750ms;
+            transition-delay: 750ms;
+  }
+
+  .md\:transition-delay-1000 {
+    -webkit-transition-delay: 1000ms;
+            transition-delay: 1000ms;
+  }
+
+  .md\:transition-delay-product {
+    -webkit-transition-delay:  0.1s, 0s;
+            transition-delay:  0.1s, 0s;
+  }
+
+  .md\:will-change-auto {
+    will-change: auto;
+  }
+
+  .md\:will-change-scroll {
+    will-change: scroll-position;
+  }
+
+  .md\:will-change-contents {
+    will-change: contents;
+  }
+
+  .md\:will-change-opacity {
+    will-change: opacity;
+  }
+
+  .md\:will-change-transform {
+    will-change: transform;
   }
 }
 
@@ -52487,6 +54153,20 @@ video {
     left: 0;
   }
 
+  .lg\:inset-40 {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .lg\:inset-minus-40 {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
   .lg\:inset-auto {
     top: auto;
     right: auto;
@@ -52502,6 +54182,26 @@ video {
   .lg\:inset-x-0 {
     right: 0;
     left: 0;
+  }
+
+  .lg\:inset-y-40 {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .lg\:inset-x-40 {
+    right: 40px;
+    left: 40px;
+  }
+
+  .lg\:inset-y-minus-40 {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .lg\:inset-x-minus-40 {
+    right: -40px;
+    left: -40px;
   }
 
   .lg\:inset-y-auto {
@@ -52530,6 +54230,38 @@ video {
     left: 0;
   }
 
+  .lg\:top-40 {
+    top: 40px;
+  }
+
+  .lg\:right-40 {
+    right: 40px;
+  }
+
+  .lg\:bottom-40 {
+    bottom: 40px;
+  }
+
+  .lg\:left-40 {
+    left: 40px;
+  }
+
+  .lg\:top-minus-40 {
+    top: -40px;
+  }
+
+  .lg\:right-minus-40 {
+    right: -40px;
+  }
+
+  .lg\:bottom-minus-40 {
+    bottom: -40px;
+  }
+
+  .lg\:left-minus-40 {
+    left: -40px;
+  }
+
   .lg\:top-auto {
     top: auto;
   }
@@ -52543,6 +54275,270 @@ video {
   }
 
   .lg\:left-auto {
+    left: auto;
+  }
+
+  .lg\:hover\:inset-0:hover {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .lg\:hover\:inset-40:hover {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .lg\:hover\:inset-minus-40:hover {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
+  .lg\:hover\:inset-auto:hover {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .lg\:hover\:inset-y-0:hover {
+    top: 0;
+    bottom: 0;
+  }
+
+  .lg\:hover\:inset-x-0:hover {
+    right: 0;
+    left: 0;
+  }
+
+  .lg\:hover\:inset-y-40:hover {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .lg\:hover\:inset-x-40:hover {
+    right: 40px;
+    left: 40px;
+  }
+
+  .lg\:hover\:inset-y-minus-40:hover {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .lg\:hover\:inset-x-minus-40:hover {
+    right: -40px;
+    left: -40px;
+  }
+
+  .lg\:hover\:inset-y-auto:hover {
+    top: auto;
+    bottom: auto;
+  }
+
+  .lg\:hover\:inset-x-auto:hover {
+    right: auto;
+    left: auto;
+  }
+
+  .lg\:hover\:top-0:hover {
+    top: 0;
+  }
+
+  .lg\:hover\:right-0:hover {
+    right: 0;
+  }
+
+  .lg\:hover\:bottom-0:hover {
+    bottom: 0;
+  }
+
+  .lg\:hover\:left-0:hover {
+    left: 0;
+  }
+
+  .lg\:hover\:top-40:hover {
+    top: 40px;
+  }
+
+  .lg\:hover\:right-40:hover {
+    right: 40px;
+  }
+
+  .lg\:hover\:bottom-40:hover {
+    bottom: 40px;
+  }
+
+  .lg\:hover\:left-40:hover {
+    left: 40px;
+  }
+
+  .lg\:hover\:top-minus-40:hover {
+    top: -40px;
+  }
+
+  .lg\:hover\:right-minus-40:hover {
+    right: -40px;
+  }
+
+  .lg\:hover\:bottom-minus-40:hover {
+    bottom: -40px;
+  }
+
+  .lg\:hover\:left-minus-40:hover {
+    left: -40px;
+  }
+
+  .lg\:hover\:top-auto:hover {
+    top: auto;
+  }
+
+  .lg\:hover\:right-auto:hover {
+    right: auto;
+  }
+
+  .lg\:hover\:bottom-auto:hover {
+    bottom: auto;
+  }
+
+  .lg\:hover\:left-auto:hover {
+    left: auto;
+  }
+
+  .group:hover .lg\:group-hover\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .group:hover .lg\:group-hover\:inset-40 {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .group:hover .lg\:group-hover\:inset-minus-40 {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
+  .group:hover .lg\:group-hover\:inset-auto {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .group:hover .lg\:group-hover\:inset-y-0 {
+    top: 0;
+    bottom: 0;
+  }
+
+  .group:hover .lg\:group-hover\:inset-x-0 {
+    right: 0;
+    left: 0;
+  }
+
+  .group:hover .lg\:group-hover\:inset-y-40 {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .group:hover .lg\:group-hover\:inset-x-40 {
+    right: 40px;
+    left: 40px;
+  }
+
+  .group:hover .lg\:group-hover\:inset-y-minus-40 {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .group:hover .lg\:group-hover\:inset-x-minus-40 {
+    right: -40px;
+    left: -40px;
+  }
+
+  .group:hover .lg\:group-hover\:inset-y-auto {
+    top: auto;
+    bottom: auto;
+  }
+
+  .group:hover .lg\:group-hover\:inset-x-auto {
+    right: auto;
+    left: auto;
+  }
+
+  .group:hover .lg\:group-hover\:top-0 {
+    top: 0;
+  }
+
+  .group:hover .lg\:group-hover\:right-0 {
+    right: 0;
+  }
+
+  .group:hover .lg\:group-hover\:bottom-0 {
+    bottom: 0;
+  }
+
+  .group:hover .lg\:group-hover\:left-0 {
+    left: 0;
+  }
+
+  .group:hover .lg\:group-hover\:top-40 {
+    top: 40px;
+  }
+
+  .group:hover .lg\:group-hover\:right-40 {
+    right: 40px;
+  }
+
+  .group:hover .lg\:group-hover\:bottom-40 {
+    bottom: 40px;
+  }
+
+  .group:hover .lg\:group-hover\:left-40 {
+    left: 40px;
+  }
+
+  .group:hover .lg\:group-hover\:top-minus-40 {
+    top: -40px;
+  }
+
+  .group:hover .lg\:group-hover\:right-minus-40 {
+    right: -40px;
+  }
+
+  .group:hover .lg\:group-hover\:bottom-minus-40 {
+    bottom: -40px;
+  }
+
+  .group:hover .lg\:group-hover\:left-minus-40 {
+    left: -40px;
+  }
+
+  .group:hover .lg\:group-hover\:top-auto {
+    top: auto;
+  }
+
+  .group:hover .lg\:group-hover\:right-auto {
+    right: auto;
+  }
+
+  .group:hover .lg\:group-hover\:bottom-auto {
+    bottom: auto;
+  }
+
+  .group:hover .lg\:group-hover\:left-auto {
     left: auto;
   }
 
@@ -54543,6 +56539,230 @@ video {
 
   .lg\:transform-view {
     transform-box: view-box;
+  }
+
+  .lg\:transition-none {
+    -webkit-transition-property: none;
+    transition-property: none;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-all {
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-color {
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-bg {
+    -webkit-transition-property: background-color;
+    transition-property: background-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-border {
+    -webkit-transition-property: border-color;
+    transition-property: border-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-colors {
+    -webkit-transition-property: color, background-color, border-color;
+    transition-property: color, background-color, border-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-opacity {
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-transform {
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-opacity-top {
+    -webkit-transition-property: opacity, top;
+    transition-property: opacity, top;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-0 {
+    --transition-duration: 0ms;
+    -webkit-transition-duration: 0ms;
+            transition-duration: 0ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-100 {
+    --transition-duration: 100ms;
+    -webkit-transition-duration: 100ms;
+            transition-duration: 100ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-250 {
+    --transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-500 {
+    --transition-duration: 500ms;
+    -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-750 {
+    --transition-duration: 750ms;
+    -webkit-transition-duration: 750ms;
+            transition-duration: 750ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-1000 {
+    --transition-duration: 1000ms;
+    -webkit-transition-duration: 1000ms;
+            transition-duration: 1000ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-2-3 {
+    --transition-duration: 0.2s, 0.3s;
+    -webkit-transition-duration: 0.2s, 0.3s;
+            transition-duration: 0.2s, 0.3s;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .lg\:transition-linear {
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+  }
+
+  .lg\:transition-ease {
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+  }
+
+  .lg\:transition-ease-in {
+    -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+  }
+
+  .lg\:transition-ease-out {
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+  }
+
+  .lg\:transition-ease-in-out {
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+  }
+
+  .lg\:transition-ease-ease {
+    -webkit-transition-timing-function: ease, ease;
+            transition-timing-function: ease, ease;
+  }
+
+  .lg\:transition-delay-0 {
+    -webkit-transition-delay: 0ms;
+            transition-delay: 0ms;
+  }
+
+  .lg\:transition-delay-100 {
+    -webkit-transition-delay: 100ms;
+            transition-delay: 100ms;
+  }
+
+  .lg\:transition-delay-250 {
+    -webkit-transition-delay: 250ms;
+            transition-delay: 250ms;
+  }
+
+  .lg\:transition-delay-500 {
+    -webkit-transition-delay: 500ms;
+            transition-delay: 500ms;
+  }
+
+  .lg\:transition-delay-750 {
+    -webkit-transition-delay: 750ms;
+            transition-delay: 750ms;
+  }
+
+  .lg\:transition-delay-1000 {
+    -webkit-transition-delay: 1000ms;
+            transition-delay: 1000ms;
+  }
+
+  .lg\:transition-delay-product {
+    -webkit-transition-delay:  0.1s, 0s;
+            transition-delay:  0.1s, 0s;
+  }
+
+  .lg\:will-change-auto {
+    will-change: auto;
+  }
+
+  .lg\:will-change-scroll {
+    will-change: scroll-position;
+  }
+
+  .lg\:will-change-contents {
+    will-change: contents;
+  }
+
+  .lg\:will-change-opacity {
+    will-change: opacity;
+  }
+
+  .lg\:will-change-transform {
+    will-change: transform;
   }
 }
 
@@ -65903,6 +68123,20 @@ video {
     left: 0;
   }
 
+  .xl\:inset-40 {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .xl\:inset-minus-40 {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
   .xl\:inset-auto {
     top: auto;
     right: auto;
@@ -65918,6 +68152,26 @@ video {
   .xl\:inset-x-0 {
     right: 0;
     left: 0;
+  }
+
+  .xl\:inset-y-40 {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .xl\:inset-x-40 {
+    right: 40px;
+    left: 40px;
+  }
+
+  .xl\:inset-y-minus-40 {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .xl\:inset-x-minus-40 {
+    right: -40px;
+    left: -40px;
   }
 
   .xl\:inset-y-auto {
@@ -65946,6 +68200,38 @@ video {
     left: 0;
   }
 
+  .xl\:top-40 {
+    top: 40px;
+  }
+
+  .xl\:right-40 {
+    right: 40px;
+  }
+
+  .xl\:bottom-40 {
+    bottom: 40px;
+  }
+
+  .xl\:left-40 {
+    left: 40px;
+  }
+
+  .xl\:top-minus-40 {
+    top: -40px;
+  }
+
+  .xl\:right-minus-40 {
+    right: -40px;
+  }
+
+  .xl\:bottom-minus-40 {
+    bottom: -40px;
+  }
+
+  .xl\:left-minus-40 {
+    left: -40px;
+  }
+
   .xl\:top-auto {
     top: auto;
   }
@@ -65959,6 +68245,270 @@ video {
   }
 
   .xl\:left-auto {
+    left: auto;
+  }
+
+  .xl\:hover\:inset-0:hover {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .xl\:hover\:inset-40:hover {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .xl\:hover\:inset-minus-40:hover {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
+  .xl\:hover\:inset-auto:hover {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .xl\:hover\:inset-y-0:hover {
+    top: 0;
+    bottom: 0;
+  }
+
+  .xl\:hover\:inset-x-0:hover {
+    right: 0;
+    left: 0;
+  }
+
+  .xl\:hover\:inset-y-40:hover {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .xl\:hover\:inset-x-40:hover {
+    right: 40px;
+    left: 40px;
+  }
+
+  .xl\:hover\:inset-y-minus-40:hover {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .xl\:hover\:inset-x-minus-40:hover {
+    right: -40px;
+    left: -40px;
+  }
+
+  .xl\:hover\:inset-y-auto:hover {
+    top: auto;
+    bottom: auto;
+  }
+
+  .xl\:hover\:inset-x-auto:hover {
+    right: auto;
+    left: auto;
+  }
+
+  .xl\:hover\:top-0:hover {
+    top: 0;
+  }
+
+  .xl\:hover\:right-0:hover {
+    right: 0;
+  }
+
+  .xl\:hover\:bottom-0:hover {
+    bottom: 0;
+  }
+
+  .xl\:hover\:left-0:hover {
+    left: 0;
+  }
+
+  .xl\:hover\:top-40:hover {
+    top: 40px;
+  }
+
+  .xl\:hover\:right-40:hover {
+    right: 40px;
+  }
+
+  .xl\:hover\:bottom-40:hover {
+    bottom: 40px;
+  }
+
+  .xl\:hover\:left-40:hover {
+    left: 40px;
+  }
+
+  .xl\:hover\:top-minus-40:hover {
+    top: -40px;
+  }
+
+  .xl\:hover\:right-minus-40:hover {
+    right: -40px;
+  }
+
+  .xl\:hover\:bottom-minus-40:hover {
+    bottom: -40px;
+  }
+
+  .xl\:hover\:left-minus-40:hover {
+    left: -40px;
+  }
+
+  .xl\:hover\:top-auto:hover {
+    top: auto;
+  }
+
+  .xl\:hover\:right-auto:hover {
+    right: auto;
+  }
+
+  .xl\:hover\:bottom-auto:hover {
+    bottom: auto;
+  }
+
+  .xl\:hover\:left-auto:hover {
+    left: auto;
+  }
+
+  .group:hover .xl\:group-hover\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .group:hover .xl\:group-hover\:inset-40 {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  .group:hover .xl\:group-hover\:inset-minus-40 {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
+  }
+
+  .group:hover .xl\:group-hover\:inset-auto {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .group:hover .xl\:group-hover\:inset-y-0 {
+    top: 0;
+    bottom: 0;
+  }
+
+  .group:hover .xl\:group-hover\:inset-x-0 {
+    right: 0;
+    left: 0;
+  }
+
+  .group:hover .xl\:group-hover\:inset-y-40 {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  .group:hover .xl\:group-hover\:inset-x-40 {
+    right: 40px;
+    left: 40px;
+  }
+
+  .group:hover .xl\:group-hover\:inset-y-minus-40 {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .group:hover .xl\:group-hover\:inset-x-minus-40 {
+    right: -40px;
+    left: -40px;
+  }
+
+  .group:hover .xl\:group-hover\:inset-y-auto {
+    top: auto;
+    bottom: auto;
+  }
+
+  .group:hover .xl\:group-hover\:inset-x-auto {
+    right: auto;
+    left: auto;
+  }
+
+  .group:hover .xl\:group-hover\:top-0 {
+    top: 0;
+  }
+
+  .group:hover .xl\:group-hover\:right-0 {
+    right: 0;
+  }
+
+  .group:hover .xl\:group-hover\:bottom-0 {
+    bottom: 0;
+  }
+
+  .group:hover .xl\:group-hover\:left-0 {
+    left: 0;
+  }
+
+  .group:hover .xl\:group-hover\:top-40 {
+    top: 40px;
+  }
+
+  .group:hover .xl\:group-hover\:right-40 {
+    right: 40px;
+  }
+
+  .group:hover .xl\:group-hover\:bottom-40 {
+    bottom: 40px;
+  }
+
+  .group:hover .xl\:group-hover\:left-40 {
+    left: 40px;
+  }
+
+  .group:hover .xl\:group-hover\:top-minus-40 {
+    top: -40px;
+  }
+
+  .group:hover .xl\:group-hover\:right-minus-40 {
+    right: -40px;
+  }
+
+  .group:hover .xl\:group-hover\:bottom-minus-40 {
+    bottom: -40px;
+  }
+
+  .group:hover .xl\:group-hover\:left-minus-40 {
+    left: -40px;
+  }
+
+  .group:hover .xl\:group-hover\:top-auto {
+    top: auto;
+  }
+
+  .group:hover .xl\:group-hover\:right-auto {
+    right: auto;
+  }
+
+  .group:hover .xl\:group-hover\:bottom-auto {
+    bottom: auto;
+  }
+
+  .group:hover .xl\:group-hover\:left-auto {
     left: auto;
   }
 
@@ -67959,5 +70509,229 @@ video {
 
   .xl\:transform-view {
     transform-box: view-box;
+  }
+
+  .xl\:transition-none {
+    -webkit-transition-property: none;
+    transition-property: none;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-all {
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-color {
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-bg {
+    -webkit-transition-property: background-color;
+    transition-property: background-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-border {
+    -webkit-transition-property: border-color;
+    transition-property: border-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-colors {
+    -webkit-transition-property: color, background-color, border-color;
+    transition-property: color, background-color, border-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-opacity {
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-transform {
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-opacity-top {
+    -webkit-transition-property: opacity, top;
+    transition-property: opacity, top;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-0 {
+    --transition-duration: 0ms;
+    -webkit-transition-duration: 0ms;
+            transition-duration: 0ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-100 {
+    --transition-duration: 100ms;
+    -webkit-transition-duration: 100ms;
+            transition-duration: 100ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-250 {
+    --transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-500 {
+    --transition-duration: 500ms;
+    -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-750 {
+    --transition-duration: 750ms;
+    -webkit-transition-duration: 750ms;
+            transition-duration: 750ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-1000 {
+    --transition-duration: 1000ms;
+    -webkit-transition-duration: 1000ms;
+            transition-duration: 1000ms;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-2-3 {
+    --transition-duration: 0.2s, 0.3s;
+    -webkit-transition-duration: 0.2s, 0.3s;
+            transition-duration: 0.2s, 0.3s;
+    -webkit-transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration);
+  }
+
+  .xl\:transition-linear {
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+  }
+
+  .xl\:transition-ease {
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+  }
+
+  .xl\:transition-ease-in {
+    -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+  }
+
+  .xl\:transition-ease-out {
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+  }
+
+  .xl\:transition-ease-in-out {
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+  }
+
+  .xl\:transition-ease-ease {
+    -webkit-transition-timing-function: ease, ease;
+            transition-timing-function: ease, ease;
+  }
+
+  .xl\:transition-delay-0 {
+    -webkit-transition-delay: 0ms;
+            transition-delay: 0ms;
+  }
+
+  .xl\:transition-delay-100 {
+    -webkit-transition-delay: 100ms;
+            transition-delay: 100ms;
+  }
+
+  .xl\:transition-delay-250 {
+    -webkit-transition-delay: 250ms;
+            transition-delay: 250ms;
+  }
+
+  .xl\:transition-delay-500 {
+    -webkit-transition-delay: 500ms;
+            transition-delay: 500ms;
+  }
+
+  .xl\:transition-delay-750 {
+    -webkit-transition-delay: 750ms;
+            transition-delay: 750ms;
+  }
+
+  .xl\:transition-delay-1000 {
+    -webkit-transition-delay: 1000ms;
+            transition-delay: 1000ms;
+  }
+
+  .xl\:transition-delay-product {
+    -webkit-transition-delay:  0.1s, 0s;
+            transition-delay:  0.1s, 0s;
+  }
+
+  .xl\:will-change-auto {
+    will-change: auto;
+  }
+
+  .xl\:will-change-scroll {
+    will-change: scroll-position;
+  }
+
+  .xl\:will-change-contents {
+    will-change: contents;
+  }
+
+  .xl\:will-change-opacity {
+    will-change: opacity;
+  }
+
+  .xl\:will-change-transform {
+    will-change: transform;
   }
 }

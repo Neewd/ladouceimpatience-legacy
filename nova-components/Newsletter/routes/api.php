@@ -32,10 +32,12 @@ Route::prefix('/campaigns')->group(function () {
     Route::get('/', NewsletterController::class.'@indexCampaigns');
     Route::post('/', NewsletterController::class.'@createCampaign');
     Route::post('/send', NewsletterController::class.'@sendCampaignNow');
+    Route::delete('/{campaignId}', NewsletterController::class.'@deleteCampaign');
 });
 
 Route::prefix('/list')->group(function () {
     Route::get('/{listId}', NewsletterController::class.'@getContactFromList');
+    Route::put('/removeFromList', NewsletterController::class.'@removeContactFromList');
 });
 
 Route::prefix('/templates')->group(function () {

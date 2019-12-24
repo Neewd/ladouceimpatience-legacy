@@ -1,5 +1,9 @@
 const mix = require('laravel-mix');
 
+mix.webpackConfig({
+   devtool: 'eval-source-map'
+});
+
 require('laravel-mix-tailwind');
 
 /*
@@ -14,6 +18,7 @@ require('laravel-mix-tailwind');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+   .sourceMaps()
    .sass('resources/sass/app.scss', 'public/css')
    .tailwind()
    .disableNotifications();

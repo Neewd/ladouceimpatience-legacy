@@ -8,15 +8,17 @@ class CreateProductTable extends Migration {
 	public function up()
 	{
 		Schema::create('product', function(Blueprint $table) {
-			$table->increments('id');
+			$table->bigIncrements('id');
 			$table->timestamps();
 			$table->string('name');
-			$table->string('thumbnail_url');
-			$table->string('picture_url');
 			$table->string('description');
-			$table->string('brand');
+			$table->bigInteger('brand_id')->unsigned();
 			$table->integer('available_stock')->default('0');
-			$table->double('unit_price');
+			$table->integer('range');
+		});
+
+		Schema::table('product', function($table) {
+			$table->foreign('brand_id')->references('id')->on('brand');
 		});
 	}
 

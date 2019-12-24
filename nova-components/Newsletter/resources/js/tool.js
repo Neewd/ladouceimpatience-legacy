@@ -1,7 +1,10 @@
 import VueSweetalert2 from 'vue-sweetalert2';
+const moment = require('moment')
+require('moment/locale/fr')
 
 Nova.booting((Vue, router, store) => {
   Vue.use(VueSweetalert2);
+  Vue.use(require('vue-moment'), { moment });
   router.addRoutes([
     {
       path: '/newsletter',
@@ -16,6 +19,11 @@ Nova.booting((Vue, router, store) => {
           path: 'campaign',
           name: 'campaign',
           component: require('./components/Campaign'),
+        },
+        {
+          path: 'recipient',
+          name: 'recipient',
+          component: require('./components/Recipient'),
         },
         {
           path: 'templates',

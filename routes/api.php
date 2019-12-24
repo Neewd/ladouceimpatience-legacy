@@ -18,6 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('thematics', 'ThematicController');
+
+Route::prefix('/products')->group(function () {
+    Route::get('/{thematic}','ProductController@index')->where('thematic','([a-z-]+)');
+    Route::get('/{id}', 'ProductController@getDetails')->where('id','([0-9]+)');
+});
+
 Route::get('/user/{email}', 'UserController@exist');
 Route::post('/email/verify/{id}', 'UserController@verifyEmail')->name('api.verficiation.verify')->middleware('signed');
 Route::put('/reset/password', 'UserController@sendResetPassword');

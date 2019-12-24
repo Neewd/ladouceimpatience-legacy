@@ -1,1 +1,0 @@
-<p><img src="/storage/images/newsletters/41akzdgJ5LaDaSj1i6VmWTiXHTZsdpGNx9ybSGNg.jpeg">j'ai faim</p>

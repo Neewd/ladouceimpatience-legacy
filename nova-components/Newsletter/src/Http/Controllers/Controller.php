@@ -17,4 +17,9 @@ class Controller extends BaseController
     public $conflictStatus = 409;
     public $errorStatus = 500;
 
+    public function __construct()
+    {
+        $this->middleware('role:admin');
+    }
+
 }
