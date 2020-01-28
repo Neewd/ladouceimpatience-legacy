@@ -1,5 +1,6 @@
 <?php
 
+use App\Label;
 use App\Product;
 use App\Thematic;
 use Faker\Generator as Faker;
@@ -21,6 +22,7 @@ class ProductSeeder extends Seeder
             $product->thematics()->attach($faker->randomElement(Thematic::primaryThematic()->pluck('id')), ['primary' => true]); 
             $product->thematics()->attach(Thematic::where('slug', '=', 'tous')->get()); 
             $product->thematics()->attach(Thematic::where('slug', '=', 'les-nouveautes')->get()); 
+            $product->labels()->attach(Label::all()); 
 
             // We create 4 images and put this one as primary 
             DB::table('products_images')->insert([

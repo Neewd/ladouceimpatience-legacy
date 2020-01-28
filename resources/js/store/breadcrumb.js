@@ -15,10 +15,10 @@ const breadcrumb = {
             if (!(state.breadcrumbs.find(breadcrumb => breadcrumb.index == 2)) && data.index === 3) {
                 let level2Breadcrumb = {
                     index: 2,
-                    text: data.meta[0].primary_thematic.name,
+                    text: data.meta.primary_thematic.name,
                     pathName: 'thematic-products',
                     params: {
-                        thematicSlug: data.meta[0].primary_thematic.slug
+                        thematicSlug: data.meta.primary_thematic.slug
                     }
                 }
                 state.breadcrumbs.push(level2Breadcrumb)

@@ -5,14 +5,14 @@ Vue.use(VueRouter);
 import HomeComponent from './components/HomeComponent';
 import MainContentComponent from './components/MainContentComponent';
 
+// Calendar 
+import CalendarProductsComponent from './components/calendar/CalendarProductsComponent';
+
 // Thematic 
 import ThematicProductsComponent from './components/thematic/ThematicProductsComponent';
 
 // Products
-import ProductsRouteComponent from './components/products/ProductsRouteComponent';
-import ProductsComponent from './components/products/ProductsComponent';
 import ProductViewComponent from './components/products/ProductViewComponent';
-import ProductsListRouteComponent from './components/products/ProductsListRouteComponent';
 
 // Auth
 import AuthComponent from './components/auth/AuthComponent';
@@ -38,7 +38,6 @@ const routes = [
 			},
 			{
 				path: 'auth',
-				name: 'auth',
 				component: AuthComponent,
 				meta: {
 					guest: true,
@@ -63,8 +62,7 @@ const routes = [
 				meta: {
 					requiresAuth: true,
 				}
-			},
-			
+			},		
 			{
 				path: 'thematic/:thematicSlug([a-z-]+)',
 				name: 'thematic-products',
@@ -81,11 +79,16 @@ const routes = [
 					requiresAuth: false,
 				}
 			},
+			{
+				path: 'calendrier',
+				name: 'calendarProducts',
+				component: CalendarProductsComponent
+			},
 			{ path: 'email/verify/:id', component: VerifyEmailComponent },
 			{ path: 'user/reset/password', component: ResetPasswordComponent },
 		]
 	},
-	{ path: '/404', component: NotFoundComponent },
+	{ path: '/404', component: NotFoundComponent, name: 'not-found' },
 	{ path: '*', redirect: '/404' },
 ];
 

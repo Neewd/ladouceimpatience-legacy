@@ -207,6 +207,7 @@ module.exports = {
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
       none: 'none',
+      nice: '0 0.5px 3.5px -56px rgba(0, 0, 0, 0.192), 0 1.1px 8.9px -56px rgba(0, 0, 0, 0.325),0 1.8px 18.1px -56px rgba(0, 0, 0, 0.426),0 3.4px 37.2px -56px rgba(0, 0, 0, 0.62),0 11px 102px -56px rgba(0, 0, 0, 0.98)'
     },
     container: {},
     cursor: {
@@ -273,6 +274,7 @@ module.exports = {
       ]
     },
     fontSize: {
+      xxxs: '0.55rem',
       xxs: '0.65rem',
       xs: '0.75rem',
       sm: '0.875rem',
@@ -284,6 +286,9 @@ module.exports = {
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
+      '7xl': '5rem',
+      '8xl': '6rem',
+      '9xl': '7rem',
     },
     fontWeight: {
       hairline: '100',
@@ -329,6 +334,7 @@ module.exports = {
       screen: '100vh',
     }),
     inset: {
+      'minus-10': '-10px',
       'minus-40': '-40px',
       '0': '0',
       '40': '40px',
@@ -343,10 +349,11 @@ module.exports = {
       widest: '0.1em',
     },
     lineHeight: {
+      xs: '0.5',
       none: '1',
       tight: '1.25',
       snug: '1.375',
-      normal: '1.5',
+      normal: 'normal',
       relaxed: '1.625',
       loose: '2',
     },
@@ -376,6 +383,8 @@ module.exports = {
       '4xl': '56rem',
       '5xl': '64rem',
       '6xl': '72rem',
+      '7xl': '80rem',
+      '8xl': '88rem',
       full: '100%',
     },
     minHeight: {

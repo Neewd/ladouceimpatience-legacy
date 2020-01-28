@@ -22,15 +22,17 @@ class ProductResource extends JsonResource
                 'id' => $this->id,
                 'name' => $this->name,
                 'range' => $this->range,
-                'available_stock' => $this->available_stock,
+                'available_stock' => $this->available_stock > 0 ? true : false,
                 'image_primary' => new ProductImagesResource($this->images->where('type', '=', 'primary')->first()),
                 'image_secondary' => new ProductImagesResource($this->images->where('type', '=', 'secondary')->first()),
                 'images' => ProductImagesResource::collection($this->images),
                 'brand' => new BrandResource($this->brand),
                 'primary_thematic' => $this->primaryThematic->first(),
                 'thematics' => $this->thematics,
-                'created_at' => $this->created_at,
-                'updated_at' => $this->updated_at,
+                'description' => $this->description,
+                'caracteristics' => $this->caracteristics,
+                'labels' => $this->labels,
+                'advices' => $this->advices
         ];
     }
 }

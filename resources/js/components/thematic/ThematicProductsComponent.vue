@@ -1,7 +1,10 @@
 <template>
     <div>
-        <div id="hero" class="bg-primary h-20 flex items-center justify-center w-screen">
+        <div id="hero" class="bg-primary py-6 flex items-center justify-center w-screen flex-col">
             <p class>{{ thematic.name }}</p>
+            <p class="w-6/12 text-xs text-center">
+                {{ thematic.description }}
+            </p>
         </div>
         <div class="flex px-32 flex-col">
             <div id="filters"></div>

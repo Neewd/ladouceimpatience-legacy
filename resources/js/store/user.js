@@ -3,13 +3,13 @@ const user = {
 		user: null,
 		token: localStorage.getItem('vp-token') || null,
 		authenticated: false,
-		emailVerification : {
+		emailVerification: {
 			loading: false,
 			finished: false,
 			message: '',
 			error: false
 		},
-		error : {}
+		error: {}
 	},
 	mutations: {
 		LOGIN(state, thematics) {
@@ -54,7 +54,7 @@ const user = {
 		FETCH_USER_SUCCESS(state, user) {
 			state.user = user
 			state.authenticated = true
-		} 
+		}
 	},
 	getters: {
 		authenticated: state => state.authenticated,
@@ -65,26 +65,26 @@ const user = {
 		async login({ commit }, data) {
 			return new Promise((resolve, reject) => {
 				commit("LOGIN", true);
-			axios.post('/api/login', { email : data.email , password: data.password})
-				.then(({ data }) => {
-					commit("LOGIN_SUCCESS", data);
-					resolve(data);
-				})
-				.catch(error => {
-					reject(error)
-				})
+				axios.post('/api/login', { email: data.email, password: data.password })
+					.then(({ data }) => {
+						commit("LOGIN_SUCCESS", data);
+						resolve(data);
+					})
+					.catch(error => {
+						reject(error)
+					})
 			})
 		},
-		logout({commit}) {
-	        return new Promise((resolve, reject) => {
-	            commit("LOGOUT_SUCCESS")
-	            localStorage.removeItem('vp-token')
-	            localStorage.removeItem('vp-refresh-token')
-	            // remove the axios default header
-	            delete axios.defaults.headers.common['Authorization']
-	            resolve()
-	        })
-   		},
+		logout({ commit }) {
+			return new Promise((resolve, reject) => {
+				commit("LOGOUT_SUCCESS")
+				localStorage.removeItem('vp-token')
+				localStorage.removeItem('vp-refresh-token')
+				// remove the axios default header
+				delete axios.defaults.headers.common['Authorization']
+				resolve()
+			})
+		},
 		async checkUserExistence({ commit }, email) {
 			return axios.get(`/api/user/${email}`)
 		},
@@ -100,7 +100,7 @@ const user = {
 		},
 		async verifyUserMail({ commit }, data) {
 			commit("VERIFY_USER_MAIL");
-			axios.post(`/api/email/verify/${data.userId}?expires=${data.expires}&hash=${data.hash}&signature=${data.signature}`, { })
+			axios.post(`/api/email/verify/${data.userId}?expires=${data.expires}&hash=${data.hash}&signature=${data.signature}`, {})
 				.then(response => {
 					commit("VERIFY_USER_MAIL_SUCCESS", response.data);
 				})
@@ -118,18 +118,18 @@ const user = {
 				});
 		},
 		async sendResetPasswordLink({ commit }, { email }) {
-			axios.put(`/api/reset/password` , { email : email })
-			.then(response => {
-				console.log(response)
-			})
-			.catch(error => {
-				console.error(error)
-				// commit("FETCH_USER_FAILURE", error.response.data);
-			});
+			axios.put(`/api/reset/password`, { email: email })
+				.then(response => {
+					console.log(response)
+				})
+				.catch(error => {
+					console.error(error)
+					// commit("FETCH_USER_FAILURE", error.response.data);
+				});
 		},
 		async modifyPassword({ commit }, data) {
-			return new Promise((resolve, reject ) => {
-				axios.put(`/api/modify/password`, { password: data.password, password_confirmation : data.password_confirmation, token : data.token})
+			return new Promise((resolve, reject) => {
+				axios.put(`/api/modify/password`, { password: data.password, password_confirmation: data.password_confirmation, token: data.token })
 					.then(response => {
 						resolve(response)
 					})

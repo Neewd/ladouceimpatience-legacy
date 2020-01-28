@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Vous.Paris</title>
+        <title>La douce impatience</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -18,7 +18,7 @@
     </head>
     <body>
         <div id="app">
-            <div class="container min-w-full">
+            <div class="min-w-full">
                 <router-view></router-view>
             </div>
         </div>

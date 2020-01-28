@@ -91,7 +91,7 @@
 			</div>
 		</section>
 		<section id="socials" >
-			<p class="text-3xl">@vous.paris</p>
+			<p class="text-3xl">@La douce impatience</p>
 		</section>
 	</section>
 </template>

@@ -22,6 +22,11 @@ Route::apiResource('thematics', 'ThematicController');
 Route::prefix('/products')->group(function () {
     Route::get('/{thematic}','ProductController@index')->where('thematic','([a-z-]+)');
     Route::get('/{id}', 'ProductController@getDetails')->where('id','([0-9]+)');
+    Route::get('/related/{thematicSlug}/{id}', 'ProductController@getRelatedProducts')->where('id','([0-9]+)');
+});
+
+Route::prefix('/brands')->group(function () {
+    Route::get('/', 'BrandController@index');
 });
 
 Route::get('/user/{email}', 'UserController@exist');

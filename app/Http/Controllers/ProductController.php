@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Debugbar;
 use App\Product;
 use App\Thematic;
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Http\Resources\ProductResource;
 
@@ -24,7 +25,19 @@ class ProductController extends Controller
     }
 
     public function getDetails(Request $request) {
-        return ProductResource::collection(Product::where('id', '=', $request->id)->get());
+        $product = Product::where('id', '=', $request->id)->first();
+        if ($product) {
+            return new ProductResource($product);
+        } else {
+            return response()->json(['message' => 'Product not found', 'statusCode' => $this->notFoundStatus], $this->notFoundStatus);
+        }
+    }
+
+    public function getRelatedProducts(Request $request) {
+        $arrayOfProductsIdWithoutInput = Product::whereHas('thematics', function($query) use($request) {
+            $query->where('slug', '=', $request->thematicSlug);
+        })->where('id', '!=', $request->id)->pluck('id')->toArray();
+        return ProductResource::collection(Product::find(Arr::random($arrayOfProductsIdWithoutInput, 3)));
     }
 
 }

@@ -15,6 +15,7 @@ class ModifyThematicsTable extends Migration
     {
         Schema::table('thematic', function(Blueprint $table) {
             $table->string('slug')->nullable();
+            $table->text('description')->nullable();
         });
     }
 
@@ -27,6 +28,7 @@ class ModifyThematicsTable extends Migration
     {
         Schema::table('thematic', function (Blueprint $table) {
             $table->dropColumn('slug');
+            $table->dropColumn('description');
         });
     }
 }

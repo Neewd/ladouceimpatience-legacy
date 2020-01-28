@@ -44,4 +44,8 @@ class Product extends Model
         return $this->hasMany(ProductImage::class);
     }
 
+    public function labels() {
+        return $this->belongsToMany(Label::class, 'products_labels')->withTimestamps();
+    }
+
 }

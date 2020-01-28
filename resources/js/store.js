@@ -8,6 +8,8 @@ import user from './store/user';
 import newsletter from './store/newsletter';
 import products from './store/products';
 import breadcrumb from './store/breadcrumb';
+import brands from './store/brands';
+import calendarProduct from './store/calendarProduct';
 
 export default new Vuex.Store({
   modules: {
@@ -15,6 +17,8 @@ export default new Vuex.Store({
     user: user,
     newsletter: newsletter,
     products: products,
-    breadcrumb : breadcrumb
+    breadcrumb : breadcrumb,
+    brands : brands,
+    calendarProduct : calendarProduct
   }
 })

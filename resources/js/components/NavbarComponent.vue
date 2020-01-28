@@ -9,13 +9,11 @@
                     class="list-none flex flex-row justify-around w-64 font-secondary text-gray-800 text-sm"
                 >
                     <li class="hover:cursor-pointer flex items-center">Le concept</li>
-                    <li class="hover:cursor-pointer flex items-center">E-shop</li>
-                    <li class="hover:cursor-pointer flex items-center">Blog</li>
                 </ul>
             </div>
             <div id="social-icons" class="flex justify-end items-center">
-                <i class="la la-facebook-f px-3 hover:cursor-pointer flex items-center"></i>
-                <i class="la la-instagram px-3 hover:cursor-pointer flex items-center"></i>
+                <facebook-icon size="1x" class="mr-4"></facebook-icon>
+                 <instagram-icon size="1x" class="mr-4"></instagram-icon>
                 <span id="separator" class="h-4 w-px bg-gray-600"></span>
                 <router-link
                     to="/auth"
@@ -27,13 +25,17 @@
                     class="mx-5 hover:cursor-pointer text-xs font-secondary"
                     v-if="authenticated"
                 >Mon compte</router-link>
-                <calendar-icon size="1x" class="custom-class hover:cursor-pointer"></calendar-icon>
+                <div class="relative hover:cursor-pointer"
+                    @click="showCalendarProduct()">
+                    <span class="absolute top-minus-10 right-minus-10 bg-yellow-700 rounded-full text-white text-xs h-4 w-4 flex items-center justify-center">{{ daysAlreadyTaken.length }}</span>
+                    <calendar-icon size="1x"></calendar-icon>
+                </div>
                 <shopping-cart-icon size="1x" class="ml-4 hover:cursor-pointer"></shopping-cart-icon>
             </div>
         </div>
 
         <div id="logo" class="flex items-center w-full justify-center pt-1 pb-8">
-            <img src="/img/logo.jpg" class="h-12" />
+            <img src="/img/logo.png" class="h-12" />
         </div>
         <div id="navbar" class="pt-1 pb-2">
             <ul
@@ -46,7 +48,7 @@
                 >
                     <router-link
                         :to="`/thematic/${thematic.slug}`"
-                        class="hover:cursor-pointer h-full flex items-center"
+                        class="hover:cursor-pointer h-full flex items-center justify-center"
                     >{{ thematic.name }}</router-link>
                 </div>
             </ul>
@@ -56,18 +58,25 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { CalendarIcon, ShoppingCartIcon } from "vue-feather-icons";
+import { CalendarIcon, ShoppingCartIcon, FacebookIcon, InstagramIcon } from "vue-feather-icons";
 
 export default {
     components: {
         CalendarIcon,
-        ShoppingCartIcon
+        ShoppingCartIcon,
+        FacebookIcon,
+        InstagramIcon
     },
     data: function() {
         return {};
     },
     computed: {
-        ...mapGetters(["thematics", "authenticated"])
+        ...mapGetters(["thematics", "authenticated", "daysAlreadyTaken"])
+    },
+    methods: {
+        showCalendarProduct() {
+            this.$router.push({ name: 'calendarProducts' })
+        }
     }
 };
 </script>
